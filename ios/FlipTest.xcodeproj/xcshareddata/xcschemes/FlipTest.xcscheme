@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "suitmediaTest.app"
-               BlueprintName = "suitmediaTest"
-               ReferencedContainer = "container:suitmediaTest.xcodeproj">
+               BuildableName = "FlipTest.app"
+               BlueprintName = "FlipTest"
+               ReferencedContainer = "container:FlipTest.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "suitmediaTestTests.xctest"
-               BlueprintName = "suitmediaTestTests"
-               ReferencedContainer = "container:suitmediaTest.xcodeproj">
+               BuildableName = "FlipTestTests.xctest"
+               BlueprintName = "FlipTestTests"
+               ReferencedContainer = "container:FlipTest.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "suitmediaTest.app"
-            BlueprintName = "suitmediaTest"
-            ReferencedContainer = "container:suitmediaTest.xcodeproj">
+            BuildableName = "FlipTest.app"
+            BlueprintName = "FlipTest"
+            ReferencedContainer = "container:FlipTest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "suitmediaTest.app"
-            BlueprintName = "suitmediaTest"
-            ReferencedContainer = "container:suitmediaTest.xcodeproj">
+            BuildableName = "FlipTest.app"
+            BlueprintName = "FlipTest"
+            ReferencedContainer = "container:FlipTest.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
