@@ -24,3 +24,12 @@ export function getTransactions() {
     });
   };
 }
+const setDetailTransactions = (data) => ({
+  type: types.SET_DETAIL_TRANSACTIONS,
+  payload: data,
+});
+
+export function setDetailTransaction(data) {
+  console.log(data, 'line 33');
+  return dispatch => dispatch(setDetailTransactions(data));
+}

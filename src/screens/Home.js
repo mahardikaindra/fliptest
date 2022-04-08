@@ -57,7 +57,14 @@ const Home: () => Node = (props) => {
   };
 
   // Render List Item
-  const renderItem = ({item}) => <ItemTransaction data={item} />
+  const renderItem = ({item}) => (
+    <ItemTransaction
+      data={item}
+      onPress={async (data) => {
+        await props.setDetailTransaction(data);
+        await props.navigation.navigate('Detail');
+      }} />
+  )
 
   return (
     <SafeAreaView style={backgroundStyle}>

@@ -14,3 +14,12 @@ export const dataTransaction = createReducer(initialState,
     },
   }
 );
+export const detailTransaction = createReducer({},
+  {
+    [types.SET_DETAIL_TRANSACTIONS](state, action) {
+      return {
+        data: action.payload,
+      };
+    },
+  }
+);
