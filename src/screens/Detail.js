@@ -48,7 +48,6 @@ const Detail: () => Node = (props) => {
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <View style={styles.topContent}>
         <Text style={styles.textBold}>{`ID Transaksi #${id}`.toUpperCase()}</Text>
-        <Icon name={'content-copy'} color={'#f6693e'} size={20} style={styles.icon} />
       </View>
       <View style={styles.topNavigation}>
         <Text style={styles.textBold}>{`Detail Transaksi`.toUpperCase()}</Text>

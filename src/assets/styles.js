@@ -34,11 +34,24 @@ const styles = StyleSheet.create({
    justifyContent: 'space-between',
    marginVertical: 18,
  },
+ filter: {
+   alignItems: 'center',
+   flexDirection: 'row',
+ },
  flatlist: {
    backgroundColor: '#f5f9f8',
  },
  icon: {
    marginHorizontal: 5,
+ },
+ searchBar: {
+   flexDirection: 'row',
+   backgroundColor: 'white',
+   minHeight: 50,
+   alignItems: 'center',
+   paddingHorizontal: 9,
+   margin: 5,
+   borderRadius: 10,
  },
  status: {
    minHeight: 25,
@@ -64,7 +77,7 @@ const styles = StyleSheet.create({
    borderColor: '#f6693e',
  },
  text: {
-   fontSize: 16,
+   fontSize: 15,
    color: 'black',
    fontWeight: Platform.OS == 'ios' ? '500' : '700',
    letterSpacing: 0.3,
@@ -85,9 +98,16 @@ const styles = StyleSheet.create({
  },
  textClose: {
    fontSize: 16,
-   fontWeight: '500',
+   fontWeight: '600',
    color: '#f6693e',
    fontFamily: 'SourceSansPro-Bold',
+ },
+ textInput: {
+   fontSize: 14,
+   fontWeight: Platform.OS === 'ios' ?'500' : '700',
+   color: 'black',
+   fontFamily: 'SourceSansPro-Regular',
+   width: '65%',
  },
  textStatus: {
    fontSize: 12,

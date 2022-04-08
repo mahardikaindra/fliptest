@@ -5,8 +5,8 @@ const setDataTransactions = (data) => ({
   payload: data,
 });
 
-export function getTransactions() {
-  return dispatch => {
+export function getTransactions(search) {
+  return (dispatch) => {
     return new Promise((resolve, reject) => {
       fetch(`https://recruitment-test.flip.id/frontend-test`)
         .then((response) => response.json())
@@ -24,12 +24,12 @@ export function getTransactions() {
     });
   };
 }
+
 const setDetailTransactions = (data) => ({
   type: types.SET_DETAIL_TRANSACTIONS,
   payload: data,
 });
 
 export function setDetailTransaction(data) {
-  console.log(data, 'line 33');
   return dispatch => dispatch(setDetailTransactions(data));
 }
