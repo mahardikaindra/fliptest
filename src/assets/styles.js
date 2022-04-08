@@ -65,33 +65,41 @@ const styles = StyleSheet.create({
  },
  text: {
    fontSize: 16,
-   fontWeight: '500',
    color: 'black',
+   fontWeight: '500',
+   letterSpacing: 0.3,
+   fontFamily: 'SourceSansPro-Regular',
  },
  textBold: {
    fontSize: 16,
    fontWeight: 'bold',
    color: 'black',
+   fontFamily: 'SourceSansPro-Bold',
  },
  textBankName: {
    fontSize: 16,
    fontWeight: 'bold',
    color: 'black',
+   fontFamily: 'SourceSansPro-Bold',
+   letterSpacing: 0.5,
  },
  textClose: {
    fontSize: 16,
    fontWeight: '500',
    color: '#f6693e',
+   fontFamily: 'SourceSansPro-Bold',
  },
  textStatus: {
    fontSize: 12,
    fontWeight: 'bold',
    color: 'white',
+   fontFamily: 'SourceSansPro-Bold',
  },
  textStatusCek: {
    fontSize: 12,
    fontWeight: 'bold',
    color: 'black',
+   fontFamily: 'SourceSansPro-Bold',
  },
  topContent: {
    minHeight: 40,

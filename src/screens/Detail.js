@@ -27,7 +27,7 @@ import {
 import styles from '../assets/styles';
 import {ItemTransaction} from '../components';
 import {formatingBankName, formatRupiah, formatingDate, formatingStatus} from '../utils/utils';
-import Icon from 'react-native-vector-icons/Fontisto';
+// import Icon from 'react-native-vector-icons/Fontisto';
 
 const Detail: () => Node = (props) => {
 
@@ -46,10 +46,10 @@ const Detail: () => Node = (props) => {
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <View style={styles.topContent}>
-        <Text style={styles.text}>{`ID Transaksi #${id}`.toUpperCase()}</Text>
+        <Text style={styles.textBold}>{`ID Transaksi #${id}`.toUpperCase()}</Text>
       </View>
       <View style={styles.topNavigation}>
-        <Text style={styles.text}>{`Detail Transaksi`.toUpperCase()}</Text>
+        <Text style={styles.textBold}>{`Detail Transaksi`.toUpperCase()}</Text>
         <TouchableOpacity onPress={() => props.navigation.goBack()}>
           <Text style={styles.textClose}>{`Tutup`}</Text>
         </TouchableOpacity>
@@ -58,7 +58,7 @@ const Detail: () => Node = (props) => {
         <View>
           <View style={styles.beneficiary}>
             <Text style={styles.textBankName}>{formatingBankName(sender_bank)}</Text>
-            <Icon name={'arrow-right'} color={'black'} style={styles.icon} />
+            {/*<Icon name={'arrow-right'} color={'black'} style={styles.icon} />*/}
             <Text style={styles.textBankName}>{formatingBankName(beneficiary_bank)}</Text>
           </View>
           <View style={styles.detailRow}>

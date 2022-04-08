@@ -15,8 +15,8 @@ import {
 } from 'react-native';
 import styles from '../assets/styles';
 import {formatingBankName, formatRupiah, formatingDate, formatingStatus} from '../utils/utils';
-import Icon from 'react-native-vector-icons/Fontisto';
-import Octicons from 'react-native-vector-icons/Octicons';
+// import Icon from 'react-native-vector-icons/Fontisto';
+// import Octicons from 'react-native-vector-icons/Octicons';
 
 const ItemTransaction: () => Node = (props) => {
   const { beneficiary_name, beneficiary_bank, sender_bank, status, amount, completed_at } = props.data;
@@ -31,13 +31,13 @@ const ItemTransaction: () => Node = (props) => {
         <View>
           <View style={styles.beneficiary}>
             <Text style={styles.textBankName}>{formatingBankName(sender_bank)}</Text>
-            <Icon name={'arrow-right'} color={'black'} style={styles.icon} />
+            {/*<Icon name={'arrow-right'} color={'black'} style={styles.icon} />*/}
             <Text style={styles.textBankName}>{formatingBankName(beneficiary_bank)}</Text>
           </View>
           <Text style={styles.text}>{beneficiary_name.toUpperCase()}</Text>
           <View style={styles.beneficiary}>
             <Text style={styles.text}>{formatRupiah(amount)}</Text>
-            <Octicons name={'dot-fill'} color={'black'} style={styles.icon} />
+            {/*<Octicons name={'dot-fill'} color={'black'} style={styles.icon} />*/}
             <Text style={styles.text}>{formatingDate(completed_at)}</Text>
           </View>
         </View>
