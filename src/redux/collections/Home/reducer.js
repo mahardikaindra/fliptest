@@ -1,8 +1,11 @@
 import createReducer from "../../../utils/createReducer";
 import * as types from "../types";
 
-export const dataTransaction = createReducer(
-  {},
+const initialState = {
+  data: [],
+}
+
+export const dataTransaction = createReducer(initialState,
   {
     [types.SET_DATA_TRANSACTIONS](state, action) {
       return {

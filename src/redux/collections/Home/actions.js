@@ -8,15 +8,15 @@ const setDataTransactions = (data) => ({
 export function getTransactions() {
   return dispatch => {
     return new Promise((resolve, reject) => {
-      fetch.get(`https://recruitment-test.flip.id/frontend-test`)
-        .then((response) => {
-          console.log(response);
-          // if (response.status === 200) {
-          //   dispatch(setDataTransactions(response.data?.data));
-          //   resolve(response.data?.data);
-          // } else {
-          //   resolve({});
-          // }
+      fetch(`https://recruitment-test.flip.id/frontend-test`)
+        .then((response) => response.json())
+        .then((result) => {
+          if (result) {
+            dispatch(setDataTransactions(Object.values(result)));
+            resolve(true);
+          } else {
+            resolve(false);
+          }
         })
         .catch((error) => {
           reject(error);

@@ -6,57 +6,80 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import type {Node} from 'react';
 import {
+  FlatList,
   SafeAreaView,
   ScrollView,
   StatusBar,
-  StyleSheet,
   useColorScheme,
 } from 'react-native';
-
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { ActionCreators } from '../redux/actions';
 import {
   Colors,
-  Header,
 } from 'react-native/Libraries/NewAppScreen';
+import styles from '../assets/styles';
+import {ItemTransaction} from '../components';
 
-const Home: () => Node = () => {
+const Home: () => Node = (props) => {
+  const [isRefreshing, setRefreshing] = useState(false);
+
+  useEffect(() => {
+    fetchingData();
+  }, []);
+
+  const fetchingData = async () => {
+    try {
+      await props.isLoading(true);
+      !isRefreshing && await setRefreshing(true);
+      const result = await props.getTransactions();
+      if (result) {
+        await props.isLoading(false);
+        !isRefreshing && await setRefreshing(false);
+      }
+    } catch (e) {
+      await props.isLoading(false);
+      !isRefreshing && await setRefreshing(false);
+      console.log(e);
+    } finally {
+      await props.isLoading(false);
+      !isRefreshing && await setRefreshing(false);
+    }
+  }
+
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  // Render List Item
+  const renderItem = ({item}) => <ItemTransaction data={item} />
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
+      <FlatList
+        refreshing={isRefreshing}
+        onRefresh={() => fetchingData()}
+        data={props.dataTransaction.data}
+        extraData={props.dataTransaction.data}
+        renderItem={renderItem}
         contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-      </ScrollView>
+        style={styles.flatlist} />
     </SafeAreaView>
   );
 };
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
+const mapStateToProps = (state) => ({
+  dataTransaction: state.dataTransaction,
 });
 
-export default Home;
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(ActionCreators, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
