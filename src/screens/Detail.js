@@ -27,7 +27,8 @@ import {
 import styles from '../assets/styles';
 import {ItemTransaction} from '../components';
 import {formatingBankName, formatRupiah, formatingDate, formatingStatus} from '../utils/utils';
-// import Icon from 'react-native-vector-icons/Fontisto';
+import Fontisto from 'react-native-vector-icons/Fontisto';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Detail: () => Node = (props) => {
 
@@ -47,6 +48,7 @@ const Detail: () => Node = (props) => {
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
       <View style={styles.topContent}>
         <Text style={styles.textBold}>{`ID Transaksi #${id}`.toUpperCase()}</Text>
+        <Icon name={'content-copy'} color={'#f6693e'} size={20} style={styles.icon} />
       </View>
       <View style={styles.topNavigation}>
         <Text style={styles.textBold}>{`Detail Transaksi`.toUpperCase()}</Text>
@@ -58,7 +60,7 @@ const Detail: () => Node = (props) => {
         <View>
           <View style={styles.beneficiary}>
             <Text style={styles.textBankName}>{formatingBankName(sender_bank)}</Text>
-            {/*<Icon name={'arrow-right'} color={'black'} style={styles.icon} />*/}
+            <Fontisto name={'arrow-right'} color={'black'} style={styles.icon} />
             <Text style={styles.textBankName}>{formatingBankName(beneficiary_bank)}</Text>
           </View>
           <View style={styles.detailRow}>

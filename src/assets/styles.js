@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 
 const styles = StyleSheet.create({
   beneficiary: {
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
  text: {
    fontSize: 16,
    color: 'black',
-   fontWeight: '500',
+   fontWeight: Platform.OS == 'ios' ? '500' : '700',
    letterSpacing: 0.3,
    fontFamily: 'SourceSansPro-Regular',
  },
@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
    backgroundColor: '#ffffff',
    borderBottomWidth: 1,
    borderBottomColor: '#f5f9f8',
+   flexDirection: 'row',
  },
  topNavigation: {
    minHeight: 40,
