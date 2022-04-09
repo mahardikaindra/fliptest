@@ -3,7 +3,7 @@
 
 ## Mockups
 ### Apk Source
-APK source [a link](https://github.com/mahardikaindra/fliptest/tree/flip/src/assets/buildapk/apk-release.apk)
+APK source [a link](https://drive.google.com/drive/folders/1meL6EljEbQgrgOVOdW8HqCihmuh1C37N?usp=sharing)
 
 ### Transaction List Page
 ![Transaction List Page](https://user-images.githubusercontent.com/6801853/78887119-d6eb3d00-7a4e-11ea-8529-40b95afc82cc.jpeg)
