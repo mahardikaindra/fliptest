@@ -33,3 +33,10 @@ const setDetailTransactions = (data) => ({
 export function setDetailTransaction(data) {
   return dispatch => dispatch(setDetailTransactions(data));
 }
+
+export function changeFilter(index) {
+  return {
+    type: types.CHANGE_FILTER,
+    index,
+  };
+}

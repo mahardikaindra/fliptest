@@ -7,5 +7,6 @@
  */
 
 import ItemTransaction from './ItemTransactions';
+import Filter from './Filter';
 
-export { ItemTransaction };
+export { ItemTransaction, Filter };

@@ -1,5 +1,5 @@
-import {StyleSheet, Platform} from 'react-native';
-
+import {StyleSheet, Dimensions, Platform} from 'react-native';
+const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   beneficiary: {
     flexDirection: 'row',
@@ -38,11 +38,33 @@ const styles = StyleSheet.create({
    alignItems: 'center',
    flexDirection: 'row',
  },
+ filterContainer: {
+   flex: 0.3,
+   alignItems: 'flex-end',
+   justifyContent: 'flex-start',
+ },
+ filterItem: {
+   margin: 10,
+   flexDirection: 'row',
+   alignItems: 'center',
+ },
  flatlist: {
    backgroundColor: '#f5f9f8',
+   marginBottom: 70,
  },
  icon: {
    marginHorizontal: 5,
+ },
+ inputContainer: {
+   flex: 0.7,
+   flexDirection: 'row',
+   alignItems: 'center',
+ },
+ modalFilter: {
+   backgroundColor: '#ffffff',
+   width: width * 0.85,
+   borderRadius: 10,
+   padding: 20,
  },
  searchBar: {
    flexDirection: 'row',
@@ -107,7 +129,7 @@ const styles = StyleSheet.create({
    fontWeight: Platform.OS === 'ios' ?'500' : '700',
    color: 'black',
    fontFamily: 'SourceSansPro-Regular',
-   width: '65%',
+   width: '100%',
  },
  textStatus: {
    fontSize: 12,

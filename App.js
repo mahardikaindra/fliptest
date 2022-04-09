@@ -20,7 +20,7 @@ const loggerMiddleware = createLogger({
 });
 
 const configureStore = initialState => {
-  const enhancer = compose(applyMiddleware(thunkMiddleware, loggerMiddleware));
+  const enhancer = compose(applyMiddleware(thunkMiddleware));
   return createStore(reducer, initialState, enhancer);
 };
 

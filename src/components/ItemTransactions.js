@@ -19,7 +19,7 @@ import Icon from 'react-native-vector-icons/Fontisto';
 import Octicons from 'react-native-vector-icons/Octicons';
 
 const ItemTransaction: () => Node = (props) => {
-  const { beneficiary_name, beneficiary_bank, sender_bank, status, amount, completed_at } = props.data;
+  const { beneficiary_name, beneficiary_bank, sender_bank, status, amount, created_at } = props.data;
 
   const colorStatus = status === 'SUCCESS' ? '#54b685' : '#f6693e';
   const statusTag = status === 'SUCCESS' ? styles.status : status === 'PENDING' ? styles.statusCek : styles.statusFailed;
@@ -38,7 +38,7 @@ const ItemTransaction: () => Node = (props) => {
           <View style={styles.beneficiary}>
             <Text style={styles.text}>{formatRupiah(amount)}</Text>
             <Octicons name={'dot-fill'} color={'black'} style={styles.icon} />
-            <Text style={styles.text}>{formatingDate(completed_at)}</Text>
+            <Text style={styles.text}>{formatingDate(created_at)}</Text>
           </View>
         </View>
         <View style={statusTag}>

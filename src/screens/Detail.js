@@ -38,7 +38,7 @@ const Detail: () => Node = (props) => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  const { id, account_number, remark, beneficiary_name, beneficiary_bank, sender_bank, status, amount, completed_at, created_at, unique_code } = props.detailTransaction?.data;
+  const { id, account_number, remark, beneficiary_name, beneficiary_bank, sender_bank, status, amount, created_at, unique_code } = props.detailTransaction?.data;
   const colorStatus = status === 'SUCCESS' ? '#54b685' : '#f6693e';
   const statusTag = status === 'SUCCESS' ? styles.status : status === 'PENDING' ? styles.statusCek : styles.statusFailed;
   const statusText = status === 'SUCCESS' ? styles.textStatus : styles.textStatusCek;
