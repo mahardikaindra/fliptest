@@ -37,6 +37,7 @@ const Home: () => Node = (props) => {
   const [searchText, setSearchText] = useState('');
   const [dataSource, setDataSource] = useState([]);
   const [filter, setFilter] = useState([]);
+  const [filterName, setFilterName] = useState(`urutkan`.toUpperCase());
 
   useEffect(() => {
     fetchingData();
@@ -57,15 +58,6 @@ const Home: () => Node = (props) => {
       setDataSource(props.dataTransaction.data);
     }
   }, [searchText]);
-
-  // useEffect(() => {
-  //   if (props.filterView.index <= 4) {
-  //     // filterData(props.filterView.index);
-  //   // } else {
-  //     // setDataSource(prop/s.dataTransaction.data);
-  //   }
-  // }, [props.filterView.index]);
-
 
   const fetchingData = async () => {
     try {
@@ -159,7 +151,7 @@ const Home: () => Node = (props) => {
         </View>
         <View style={styles.filterContainer}>
           <TouchableOpacity style={styles.filter} onPress={() => setShowModal(!showModal)}>
-            <Text style={styles.textClose}>{`urutkan`.toUpperCase()}</Text>
+            <Text style={styles.textClose}>{filterName}</Text>
             <MaterialIcons name={'keyboard-arrow-down'} color={'#f6693e'} size={22} style={styles.icon} />
           </TouchableOpacity>
         </View>
@@ -178,8 +170,9 @@ const Home: () => Node = (props) => {
       <Filter
         visible={showModal}
         data={props.filterView.data}
-        onSelect={async (index) => {
+        onSelect={async (index, name) => {
           await props.changeFilter(index)
+          await setFilterName(name)
           await filterData(index)
           await setShowModal(false)
         }}

@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
    flexDirection: 'row',
    justifyContent: 'space-between',
    padding: 18,
-   borderLeftWidth: 5,
+   borderLeftWidth: 8,
    alignItems: 'center',
  },
  content: {
@@ -95,15 +95,14 @@ const styles = StyleSheet.create({
    paddingHorizontal: 10,
    justifyContent: 'center',
    backgroundColor: '#ffffff',
-   borderWidth: 1,
+   borderWidth: 2,
    borderColor: '#f6693e',
  },
  text: {
    fontSize: 15,
    color: 'black',
-   fontWeight: Platform.OS == 'ios' ? '500' : '700',
-   letterSpacing: 0.3,
-   fontFamily: 'SourceSansPro-Regular',
+   letterSpacing: 0.25,
+   fontFamily: 'SourceSansPro-SemiBold',
  },
  textBold: {
    fontSize: 16,
@@ -120,15 +119,13 @@ const styles = StyleSheet.create({
  },
  textClose: {
    fontSize: 16,
-   fontWeight: '600',
    color: '#f6693e',
-   fontFamily: 'SourceSansPro-Bold',
+   fontFamily: 'SourceSansPro-SemiBold',
  },
  textInput: {
    fontSize: 14,
-   fontWeight: Platform.OS === 'ios' ?'500' : '700',
    color: 'black',
-   fontFamily: 'SourceSansPro-Regular',
+   fontFamily: 'SourceSansPro-SemiBold',
    width: '100%',
  },
  textStatus: {
@@ -139,8 +136,8 @@ const styles = StyleSheet.create({
  },
  textStatusCek: {
    fontSize: 12,
-   fontWeight: 'bold',
    color: 'black',
+   fontWeight: Platform.OS === 'ios' ?'500' : '700',
    fontFamily: 'SourceSansPro-Bold',
  },
  topContent: {

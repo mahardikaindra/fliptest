@@ -34,7 +34,7 @@ const Filter: () => Node = (props) => {
               <View style={styles.modalFilter}>
                 {props.data?.map((item, index) => {
                   return (
-                    <TouchableOpacity key={item.id} onPress={() => props.onSelect(index)}>
+                    <TouchableOpacity key={item.id} onPress={() => props.onSelect(index, item.name)}>
                       <View style={styles.filterItem}>
                         <Icon
                           name={indexItem == index ?'radio-button-checked':'radio-button-off'}
@@ -42,7 +42,7 @@ const Filter: () => Node = (props) => {
                           size={24}
                           style={styles.icon}
                           />
-                        <Text>{item.name}</Text>
+                        <Text style={styles.text}>{item.name}</Text>
                       </View>
                     </TouchableOpacity>
                   );
